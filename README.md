@@ -2,6 +2,10 @@
 
 A small quality-of-life mod for **Hades II** that improves how prioritized keepsakes work at the start of a run.
 
+## Important!
+The mod has not been fully tested yet and there may be some bugs. 
+But don't worry, worst case scenario would be a game crash.
+
 ## Motivation
 
 Hades II allows prioritizing a single keepsake so it is automatically equipped when a run starts.
