@@ -128,5 +128,5 @@ function EquipRandomKeepsake(currentRun, hero)
 	SetGameSavedKeepsake(GetRandomPrioritizedKeepsake(config.previousRandomKeepsake))
 	game.GameState.LastAwardTrait = GetGameSavedKeepsake()
 
-	game.EquipKeepsake(game.CurrentRun.Hero, game.GameState.LastAwardTrait, { FromLoot = true })
+	game.EquipKeepsake(currentHero, game.GameState.LastAwardTrait, { FromLoot = true })
 end
