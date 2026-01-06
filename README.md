@@ -28,15 +28,15 @@ When a run starts:
 *The result is a "set up once and forget it" workflow: you naturally cycle through your favorite starting keepsakes without manual switching.*
 
 ## Setup
-- The Mod Loader used is [Hell2Modding](https://thunderstore.io/c/hades-ii/p/Hell2Modding/Hell2Modding/). 
-- Follow the installation procedure directly from the mod manager [r2modman](https://thunderstore.io/c/hades-ii/p/ebkr/r2modman/).
+- This mod uses the mod loader [Hell2Modding](https://thunderstore.io/c/hades-ii/p/Hell2Modding/Hell2Modding/). 
+- Go to the mod manager [r2modman](https://thunderstore.io/c/hades-ii/p/ebkr/r2modman/) page and follow the installation procedure.
 - Launch the game & Enjoy
 
 ## Configuration
-Once the game has been launched once, you can modify prioritized list through the game interface as usual.
+Once the game has been launched once, you can modify prioritized list through the game interface.
 You can also directly modify the configuration from: 
 - **r2modman** interface, look for the *Config editor* side tab,
-- **Hell2Modding** in-game interface (default key is *insert*) from the **config** menu,
+- **Hell2Modding** in-game interface (default key is *insert*) then go to the **config** menu,
 - the file itself located (on Windows) at `%AppData%/r2modmanPlus-local/HadesII/profiles/<YourProfile>/ReturnOfModding/config/SMarBe-Random_Starting_Keepsake.cfg`
 
 ## Compatibility
@@ -44,7 +44,7 @@ You can also directly modify the configuration from:
 - Any mod adding new keepsakes will work with this one as well.
 
 ## Mod suggestions
-Check out my other quality of life mods, as those are all compatible and meant to be used together:
+Check out my others *QoL* mods, those are all cross-compatible and meant to be used together:
 - [Improved Boon Info UI](https://thunderstore.io/c/hades-ii/p/SMarBe/Improved_Boon_Info_UI/): improves boon information by adding a smart filtering system based on your currently picked boons. 
 - [Run Boon Overview](https://thunderstore.io/c/hades-ii/p/SMarBe/Run_Boon_Overview/): aggregates all your currently available boons into Melinoë's Codex page.
 
