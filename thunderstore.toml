@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "SMarBe"
 name = "Random_Starting_Keepsake"
-versionNumber = "1.0.0"
+versionNumber = "0.0.1"
 description = "Randomly cycle through your favorite starting keepsakes each run."
 websiteUrl = "https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes"
 containsNsfwContent = false
