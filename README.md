@@ -16,7 +16,7 @@ In practice, this has a few drawbacks:
 
 Multiple keepsakes can be marked as **prioritized**
 
-![Keepsake rack](https://github.com/SMarechalBE/Hades-2-Improved-Boon-Info-UI/raw/main/img/KeepsakeRack.png)
+![Keepsake rack](https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/raw/main/img/KeepsakeRack.png)
 
 When a run starts:
 - One prioritized keepsake is **chosen at random**
