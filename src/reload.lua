@@ -110,7 +110,7 @@ function EquipRandomKeepsake(currentRun, hero)
 		return
 	end
 
-	local currentHero = hero or currentRun.hero
+	local currentHero = hero or currentRun.Hero
 	if not currentHero then
 		modutil.mod.Print("Can't equip random keepsake for nil hero")
 		return
