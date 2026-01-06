@@ -1,9 +1,83 @@
 local config = {
-  enabled = true,
+	enabled = true,
+	randomizeAtRunStart = true,
+	keepsakes = {
+		ManaOverTimeRefundKeepsake = false, -- Hecate
+		BossPreDamageKeepsake = false, -- Odysseus
+		ReincarnationKeepsake = false, -- Skelly
+		DoorHealReserveKeepsake = false, -- Dora
+		DeathVengeanceKeepsake = false, -- Nemesis
+		BonusMoneyKeepsake = false, -- Charon
+		BlockDeathKeepsake = false, -- Moros
+		EscalatingKeepsake = false, -- Eris
+		TimedBuffKeepsake = false, -- Hermes
+		LowHealthCritKeepsake = false, -- Artemis
+		SpellTalentKeepsake = false, -- Selene
+		ForceZeusBoonKeepsake = false, -- Zeus
+		ForceHeraBoonKeepsake = false, -- Hera
+		ForcePoseidonBoonKeepsake = false, -- Poseidon
+		ForceDemeterBoonKeepsake = false, -- Demeter
+		ForceApolloBoonKeepsake = false, -- Apollo
+		ForceAphroditeBoonKeepsake = false, -- Aphrodite
+		ForceHephaestusBoonKeepsake = false, -- Hephaestus
+		ForceHestiaBoonKeepsake = false, -- Hestia
+		ForceAresBoonKeepsake = false, -- Ares
+		AthenaEncounterKeepsake = false, -- Athena
+		SkipEncounterKeepsake = false, -- Dionysus
+		ArmorGainKeepsake = false, -- Arachne
+		FountainRarityKeepsake = false, -- Narcissus
+		UnpickedBoonKeepsake = false, -- Echo
+		DecayingBoostKeepsake = false, -- Heracles
+		DamagedDamageBoostKeepsake = false, -- Medea
+		BossMetaUpgradeKeepsake = false, -- Circe
+		TempHammerKeepsake = false, -- Icarus
+		HadesAndPersephoneKeepsake = false, -- Hades & Persephone
+		RarifyKeepsake = false, -- Zagreus
+		GoldifyKeepsake = false, -- Chronos
+		RandomBlessingKeepsake = false, -- Chaos
+	},
+	previousRandomKeepsake = "",
 }
 
 local configDesc = {
-  enabled = "Enable the mod",
+	enabled = "Enable the mod",
+	randomizeAtRunStart = "Enable to randomize keepsake at run start, otherwise only when entering training room",
+	keepsakes = {
+		ManaOverTimeRefundKeepsake = "Hecate",
+		BossPreDamageKeepsake = "Odysseus",
+		ReincarnationKeepsake = "Skelly",
+		DoorHealReserveKeepsake = "Dora",
+		DeathVengeanceKeepsake = "Nemesis",
+		BonusMoneyKeepsake = "Charon",
+		BlockDeathKeepsake = "Moros",
+		EscalatingKeepsake = "Eris",
+		TimedBuffKeepsake = "Hermes",
+		LowHealthCritKeepsake = "Artemis",
+		SpellTalentKeepsake = "Selene",
+		ForceZeusBoonKeepsake = "Zeus",
+		ForceHeraBoonKeepsake = "Hera",
+		ForcePoseidonBoonKeepsake = "Poseidon",
+		ForceDemeterBoonKeepsake = "Demeter",
+		ForceApolloBoonKeepsake = "Apollo",
+		ForceAphroditeBoonKeepsake = "Aphrodite",
+		ForceHephaestusBoonKeepsake = "Hephaestus",
+		ForceHestiaBoonKeepsake = "Hestia",
+		ForceAresBoonKeepsake = "Ares",
+		AthenaEncounterKeepsake = "Athena",
+		SkipEncounterKeepsake = "Dionysus",
+		ArmorGainKeepsake = "Arachne",
+		FountainRarityKeepsake = "Narcissus",
+		UnpickedBoonKeepsake = "Echo",
+		DecayingBoostKeepsake = "Heracles",
+		DamagedDamageBoostKeepsake = "Medea",
+		BossMetaUpgradeKeepsake = "Circe",
+		TempHammerKeepsake = "Icarus",
+		HadesAndPersephoneKeepsake = "Hades & Persephone",
+		RarifyKeepsake = "Zagreus",
+		GoldifyKeepsake = "Chronos",
+		RandomBlessingKeepsake = "Chaos",
+	},
+	previousRandomKeepsake = "Previous randomly generated keepsake",
 }
 
 return config, configDesc
