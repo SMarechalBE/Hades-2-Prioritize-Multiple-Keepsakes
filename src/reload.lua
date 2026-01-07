@@ -28,7 +28,7 @@ function GetLastRandomKeepsake()
 end
 
 ---Check if a given keepsake is prioritized
----@param keepsake string
+---@param keepsake string?
 ---@return boolean
 function IsPrioritized(keepsake)
 	return config.keepsakes[keepsake] or false
@@ -82,15 +82,16 @@ function GetRandomPrioritizedKeepsake(exclude)
 	local keepsakes = {}
 	for keepsake, prioritized in pairs(config.keepsakes) do
 		if prioritized and keepsake ~= exclude then
-			keepsakes[keepsake] = true
+			table.insert(keepsakes, keepsake)
 		end
 	end
 
-	if game.TableLength(keepsakes) == 0 then
+	local prioCount = #keepsakes
+	if prioCount == 0 then
 		return exclude
 	end
 
-	return game.GetRandomKey(keepsakes)
+	return keepsakes[math.random(prioCount)]
 end
 
 ---Initialize prioritized keepsakes equals to the currently saved one if empty
@@ -105,28 +106,67 @@ function InitPrioritizedKeepsakes()
 	end
 end
 
-function EquipRandomKeepsake(currentRun, hero)
-	if not currentRun then
+---Get the currently equipped keepsake if applicable
+--- This also has the side effect of resynchronizing game.GameState.LastAwardTrait
+--- if it is not the currently equipped keepsake
+---@return string? keepsake Optionally equipped
+function GetEquippedKeepsake()
+	local equippedKeepsake = game.GameState and game.GameState.LastAwardTrait
+	if game.HeroHasTrait(equippedKeepsake) then
+		return equippedKeepsake
+	end
+
+	-- Let's make sure game.GameState.LastAwardTrait isn't lying just in case
+	local traits = game.CurrentRun and game.CurrentRun.Hero and game.CurrentRun.Hero.Traits
+	if not traits then
 		return
 	end
 
-	local currentHero = hero or currentRun.Hero
-	if not currentHero then
+	for _, traitData in ipairs(traits) do
+		if traitData.Slot == "Keepsake" then
+			modutil.mod.Print(
+				"Something went wrong, game.GameState.LastAwardTrait is out of sync, let's restore its value for game integrity..."
+			)
+			if not game.GameState then
+				game.GameState = {}
+			end
+			game.GameState["LastAwardTrait"] = traitData.Name
+
+			return traitData.Name
+		end
+	end
+end
+
+---Unequip the current keepsake if applicable
+---@return string? keepsake The unequipped keepsake if there was one
+function UnequipCurrentKeepsake()
+	local hero = game.CurrentRun.Hero
+	if not hero then
 		modutil.mod.Print("Can't equip random keepsake for nil hero")
 		return
 	end
 
-	local equippedKeepsake = game.GameState and game.GameState.LastAwardTrait
-	if equippedKeepsake and game.HeroHasTrait(equippedKeepsake) then
-		if not IsPrioritized(equippedKeepsake) then
-			return -- Don't draw a random keepsake if the player decided to override one of the prioritized
-		else
-			game.UnequipKeepsake(currentHero, equippedKeepsake)
-		end
+	local keepsake = GetEquippedKeepsake()
+	if keepsake then
+		game.UnequipKeepsake(hero, keepsake)
 	end
 
-	SetGameSavedKeepsake(GetRandomPrioritizedKeepsake(config.previousRandomKeepsake))
-	game.GameState.LastAwardTrait = GetGameSavedKeepsake()
+	return keepsake
+end
 
-	game.EquipKeepsake(currentHero, game.GameState.LastAwardTrait, { FromLoot = true })
+---Unequip current keepsake and equip a random one, try to avoid the previous one if possible
+function EquipRandomKeepsake()
+	local hero = game.CurrentRun.Hero
+	if not hero then
+		modutil.mod.Print("Can't equip random keepsake for nil hero")
+		return
+	end
+
+	UnequipCurrentKeepsake()
+	local keepsake = GetRandomPrioritizedKeepsake(config.previousRandomKeepsake)
+
+	SetGameSavedKeepsake(keepsake) -- update the saved keepsake for data integrity
+
+	game.GameState.LastAwardTrait = keepsake
+	game.EquipKeepsake(hero, game.GameState.LastAwardTrait, { FromLoot = true })
 end

@@ -89,27 +89,39 @@ modutil.mod.Path.Wrap("KeepsakeScreenSaveFirst", function(base, screen, button)
 	return SaveCallRestore(prioritized, base, screen, button)
 end)
 
-modutil.mod.Path.Override("EquipLastAwardTrait", function(eventSource, hero)
-	EquipRandomKeepsake(game.CurrentRun, hero)
+-- Gets called when entering training room.
+--	For simplicity, we always force to re-equip one of the prioritized keepsakes.
+--  Last random keepsake is saved here if randomization is not done at run start.
+modutil.mod.Path.Override("EquipLastAwardTrait", function(...)
+	EquipRandomKeepsake()
 	if not config.randomizeAtRunStart then
 		SaveLastRandomKeepsake()
 	end
 end)
 
-modutil.mod.Path.Wrap("ChooseStartingRoom", function(base, currentRun, args)
+-- Gets called on run start in the first room.
+--  If run start randomization is enabled and the currently equipped keepsake is one of the prioritized,
+--  then we get a random keepsake. Otherwise leave it be, so the user can always override the prioritized keepsakes
+--  if he desires.
+modutil.mod.Path.Wrap("ChooseStartingRoom", function(base, ...)
 	if config.randomizeAtRunStart then
-		EquipRandomKeepsake(currentRun)
-		SaveLastRandomKeepsake()
+		local keepsake = GetEquippedKeepsake()
+		if IsPrioritized(keepsake) then
+			EquipRandomKeepsake()
+			SaveLastRandomKeepsake()
+		end
 	end
 
-	return base(currentRun, args)
+	return base(...)
 end)
 
+-- Gets called when interacting with pact of fear.
+--  If run start randomization is disabled, we roll here as if we re-entered the training room.
 modutil.mod.Path.Wrap("SpecialInteractChangeNextRunRNG", function(base, ...)
 	local returnValue = base(...)
 
-	EquipRandomKeepsake(game.CurrentRun)
 	if not config.randomizeAtRunStart then
+		EquipRandomKeepsake()
 		SaveLastRandomKeepsake()
 	end
 
