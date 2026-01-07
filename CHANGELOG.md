@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-01-07
+
 ### Fixed
 
 - Typo that was causing a crash on game reload
@@ -17,5 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.0...HEAD
+[unreleased]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/5fc97cb323c845730cbfe11440b8831eca850758...0.1.0
