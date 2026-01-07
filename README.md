@@ -42,6 +42,7 @@ You can also directly modify the configuration from:
 - **r2modman** interface, look for the *Config editor* side tab,
 - **Hell2Modding** in-game interface (default key is *insert*) then go to the **config** menu,
 - the file itself located (on Windows) at `%AppData%/r2modmanPlus-local/HadesII/profiles/<YourProfile>/ReturnOfModding/config/SMarBe-Random_Starting_Keepsake.cfg`
+By default, keepsakes are randomized at run start. This can be changed to only randomize when entering training room or by interacting with the oath of the unseen (as long as you unlocked the incantation). For this, set the property `randomizeAtRunStart` to false.
 
 ## Compatibility
 - This mod should be compatible with any mod that don't affect keepsake selection.

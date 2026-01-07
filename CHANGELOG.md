@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Added
+
+- Entry in the readme detailing the option randomizeAtRunStart 
+
 ## Changed
 
 - Now using math.random to get RNG as game's method is oviously determinist but we don't want that
