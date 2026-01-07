@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Changed
+
+- Now using math.random to get RNG as game's method is oviously determinist but we don't want that
+
+### Fixed
+
+- Bug with keepsake not unequipping sometimes and thus superposing with new one
+
 ## [0.1.1] - 2026-01-07
 
 ### Fixed
