@@ -1,4 +1,4 @@
----@meta SMarBe-Prioritize_Multiple_Keepsakes
+---@meta SMarBe-Random_Starting_Keepsake
 local public = {}
 
 return public
