@@ -1,6 +1,7 @@
 local config = {
 	enabled = true,
 	randomizeAtRunStart = true,
+	alwaysRandomizeAtRunStart = false,
 	keepsakes = {
 		ManaOverTimeRefundKeepsake = false, -- Hecate
 		BossPreDamageKeepsake = false, -- Odysseus
@@ -41,7 +42,8 @@ local config = {
 
 local configDesc = {
 	enabled = "Enable the mod",
-	randomizeAtRunStart = "Enable to randomize keepsake at run start, otherwise when entering training room or at oath of the unseen (if unlocked)",
+	randomizeAtRunStart = "Randomize keepsake at run start if currently equipped keepsake is one of the favorites, otherwise when entering training room or at oath of the unseen (if unlocked)",
+	alwaysRandomizeAtRunStart = "Always randomize keepsake at run start, requires randomizeAtRunStart to be enabled",
 	keepsakes = {
 		ManaOverTimeRefundKeepsake = "Hecate",
 		BossPreDamageKeepsake = "Odysseus",
