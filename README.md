@@ -52,6 +52,7 @@ By default, keepsakes are randomized at run start. This can be changed to only r
 Check out my others *QoL* mods, those are all cross-compatible and meant to be used together:
 - [Improved Boon Info UI](https://thunderstore.io/c/hades-ii/p/SMarBe/Improved_Boon_Info_UI/): improves boon information by adding a smart filtering system based on your currently picked boons. 
 - [Run Boon Overview](https://thunderstore.io/c/hades-ii/p/SMarBe/Run_Boon_Overview/): aggregates all your currently available boons into Melinoë's Codex page.
+- [Weapon Loadouts](https://thunderstore.io/c/hades-ii/p/SMarBe/Weapon_Loadouts/): saves loadouts for each weapon aspects, uses this mod as a dependency to manage keepsake.
 
 ## Issues and Feedback
 
