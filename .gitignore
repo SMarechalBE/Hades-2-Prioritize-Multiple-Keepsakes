@@ -3,6 +3,10 @@
 /src/icon.png
 /src/manifest.json
 
+# For files copied by r2modman when updating the package
+/src/CHANGELOG.md
+/src/README.md
+
 # For source files used to build packages
 /packages
 
