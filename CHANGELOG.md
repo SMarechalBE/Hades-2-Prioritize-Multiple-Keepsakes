@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Removed some config values and updated keepsakes lookup for a concatenated string. 
+
+### Fixed
+
+- Crash when trying to load a keepsake that was rewriting saved keepsake value with a bad data. 
+
 ## [1.0.0] - 2026-01-22
 
 ## Added
