@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-02-06
+
 ### Changed
 
 - Removed some config values and updated keepsakes lookup for a concatenated string. 
@@ -47,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/1.0.0...HEAD
+[unreleased]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.2...1.0.0
 [0.1.2]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/SMarechalBE/Hades-2-Prioritize-Multiple-Keepsakes/compare/0.1.0...0.1.1
