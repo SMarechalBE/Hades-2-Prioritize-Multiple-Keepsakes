@@ -26,6 +26,14 @@ end
 function GetLastRandomKeepsake()
 	return config.previousRandomKeepsake
 end
+local alwaysRandomizeAtRunStart = false
+function public.EnableAlwaysRandomizeAtRunStart()
+	alwaysRandomizeAtRunStart = true
+end
+
+function IsAlwaysRandomizedAtRunStart()
+	return alwaysRandomizeAtRunStart
+end
 
 ---Check if a given keepsake is prioritized
 ---@param keepsake string?

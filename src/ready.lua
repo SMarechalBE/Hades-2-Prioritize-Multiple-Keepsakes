@@ -105,7 +105,7 @@ end)
 --  if he desires.
 modutil.mod.Path.Wrap("ChooseStartingRoom", function(base, ...)
 	if config.randomizeAtRunStart then
-		if config.alwaysRandomizeAtRunStart or IsPrioritized(GetEquippedKeepsake()) then
+		if IsAlwaysRandomizedAtRunStart() or IsPrioritized(GetEquippedKeepsake()) then
 			EquipRandomKeepsake()
 			SaveLastRandomKeepsake()
 		end
