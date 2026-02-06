@@ -126,3 +126,12 @@ modutil.mod.Path.Wrap("SpecialInteractChangeNextRunRNG", function(base, ...)
 
 	return returnValue
 end)
+
+-- Only place where keepsakes can be prioritized is in keepsake rack, so let's save the keepsakes when closing the screen
+modutil.mod.Path.Wrap("KeepsakeScreenClose", function(base, ...)
+	local returnValue = base(...)
+
+	SaveKeepsakes()
+
+	return returnValue
+end)
